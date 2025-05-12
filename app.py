@@ -12,7 +12,6 @@ class  users(db.Model):
     _tablename_= "user_detials"
     id = db.Column(db.Integer,primary_key=True)
     username = db.Column(db.String(400),nullable=False)
-    password = db.Column(db.String(1000),nullable=False)
     gender = db.Column(db.String(10),nullable=False)
     birth_date = db.Column(db.String(20),nullable=False)
     email =db.Column(db.String(1000),nullable=False,unique=True)
@@ -28,20 +27,23 @@ def register():
         email = request.form.get("email")
         gender = request.form.get("gender")
         birth_date = request.form.get("date")
-        passcode = request.form.get("password")
 
         new_user = users (
             username = username,
             email = email,
             gender = gender,
             birth_date = birth_date,
-            password =passcode,
             date_added = datetime.now()
         )
         db.session.add(new_user) 
         db.session.commit()
-    add = " <h1 color:green> success full registration </h1>"
-    return add
+    add = "  success full registration "
+    return render_template("index.html", message =add)
+@app.route('/view')
+def view_all_registration_detials():
+    registrations= users.query.all()
+    
+    return render_template("view.html",datas=registrations)
 
 if __name__ == "__main__":
     with app.app_context():
