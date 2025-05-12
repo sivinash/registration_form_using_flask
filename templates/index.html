@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h2>Register</h2>
-        <form>
+        <form  action="/register" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
@@ -17,6 +17,16 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">gender</label>
+                <input type="radio" id="ch1" name="gender" value="male">male
+                <input type="radio" id="ch1" name="gender" value="female">female
+                <input type="radio" id="ch1" name="gender" value="others">others
+            </div>
+            <div class="form-group">
+                <label for="dateofbirth">Date of Birth</label>
+                <input type="date" id="date" name="date" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
