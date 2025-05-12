@@ -11,4 +11,6 @@ before stating this project  you need to create  a folder registration form  and
     step7. then run the app.py file using  "python app.py" command or manually
     note. after running in the command promte you can see a link in yellow  copy that and paste it in your broweser  
     note " when you run  the instance folder will created
+    the output will be like images in refernce_output folder
+    
 
